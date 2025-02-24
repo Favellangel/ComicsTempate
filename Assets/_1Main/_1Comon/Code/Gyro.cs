@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class Gyro : MonoBehaviour
@@ -8,11 +7,9 @@ public class Gyro : MonoBehaviour
     private const int BOTTOM = 20;
 
     public float clamp;
-    public TMP_Text text;
 
     private void Awake()
     {
-        text.text = " ";
         if(SystemInfo.supportsGyroscope)
         {
             Input.gyro.enabled = true;
@@ -46,7 +43,6 @@ public class Gyro : MonoBehaviour
 
         rotation.z = 0;
 
-        text.text = rotation.ToString();
         transform.rotation = Quaternion.Euler(rotation);
     }
 
